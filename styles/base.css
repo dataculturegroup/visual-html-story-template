@@ -42,7 +42,6 @@ header {
   }
 }
 
-
 .pull-quote {
   width: 50%; /* half width of center column of text */
   padding: var(--padding-tiny);
@@ -72,6 +71,12 @@ header {
     font-size: 1rem;
     font-style: normal;
     color: var(--color-background)
+  }
+}
+
+figure {
+  &.gallery img {
+    margin-bottom: var(--padding-tiny);
   }
 }
 
@@ -145,8 +150,18 @@ h2 {
   }
 }
 
-figure.video {
-  margin: var(--padding-medium) 0;
+figure {
+  margin: var(--padding-teeny-tiny) 0;
+  &.full-width {
+    width: 100%;
+    margin: var(--padding-small) 0;
+  }
+  &.video {
+    margin: var(--padding-tiny) 0;
+  }
+  &.gallery {
+    margin: var(--padding-tiny) 0 0 0;
+  }
 }
 
 @media only screen and (max-width: 800px) and (orientation: portrait) {
@@ -157,10 +172,13 @@ figure.video {
       }
     }
   }
-  blockquote.pull-quote {
+  .pull-quote {
     width: 100% !important;
     float: none !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
+    &.pull-left,&.pull-right {
+      border: none;
+    }
   }
 }
