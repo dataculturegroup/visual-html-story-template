@@ -17,11 +17,13 @@
 
 body {
   background-color: var(--color-background) !important;
+  font-size: 1.25rem;
 }
 
 header {
   max-height: 600px;
   overflow: clip;
+  margin-bottom: var(--padding-small);
   &.hero {
     position: relative;
     img {
@@ -40,9 +42,9 @@ header {
   }
 }
 
-blockquote.pull-quote {
+
+.pull-quote {
   width: 50%; /* half width of center column of text */
-  margin-bottom: var(--padding-tiny);
   padding: var(--padding-tiny);
   background: var(--color-secondary);
   color: var(--color-background);
@@ -63,13 +65,19 @@ blockquote.pull-quote {
     border-right: 4px solid var(--color-accent);
   }
 
-  small {
+  small, figcaption {
     display: block;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     font-size: 1rem;
     font-style: normal;
     color: var(--color-background)
+  }
+}
+
+figure.pull-quote {
+  img {
+    width: 100%;
   }
 }
 
@@ -135,6 +143,10 @@ h2 {
     font-size: 0.8rem;
     font-weight: bold;
   }
+}
+
+figure.video {
+  margin: var(--padding-medium) 0;
 }
 
 @media only screen and (max-width: 800px) and (orientation: portrait) {
