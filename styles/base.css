@@ -164,6 +164,18 @@ figure {
   }
 }
 
+.carousel {
+  margin-bottom: var(--padding-small);
+}
+.carousel-cell {
+  width: 66%;
+  height: 400px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+}
+
+
 @media only screen and (max-width: 800px) and (orientation: portrait) {
   header{
     &.hero {
