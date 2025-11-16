@@ -15,6 +15,13 @@
   --padding-large: 150px;
 }
 
+@font-face {
+  font-family: 'Chaparral Pro';
+  src: url('../fonts/ChaparralProBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   background-color: var(--color-background) !important;
   font-size: 1.25rem;
@@ -23,7 +30,6 @@ body {
 header {
   max-height: 600px;
   overflow: clip;
-  margin-bottom: var(--padding-small);
   &.hero {
     position: relative;
     img {
@@ -40,6 +46,12 @@ header {
       max-width: 700px;
     }
   }
+}
+
+p.byline {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .pull-quote {
@@ -65,46 +77,28 @@ header {
   }
 
   small, figcaption {
-    display: block;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    font-size: 1rem;
-    font-style: normal;
-    color: var(--color-background)
+    color: var(--color-background);
+    margin-bottom: 0rem;
   }
 }
 
 figure {
   &.gallery img {
-    margin-bottom: var(--padding-tiny);
+    margin-bottom: var(--padding-teeny-tiny);
   }
-}
-
-figure.pull-quote {
-  img {
-    width: 100%;
-  }
-}
-
-nav {
-  padding: 10px 0;
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  a {
-    color: var(--color-background);
-    text-decoration: none;
-    font-weight: bold;
-    &:hover {
-      text-decoration: underline;
+  &.pull-quote {
+    img {
+      width: 100%;
     }
   }
-}
-
-@font-face {
-  font-family: 'Chaparral Pro';
-  src: url('../fonts/ChaparralProBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+  small, figcaption {
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-style: normal;
+  }
 }
 
 main {
@@ -175,6 +169,11 @@ figure {
   border-radius: 5px;
 }
 
+section.smallprint {
+  font-size: 0.8rem;
+  padding: var(--padding-small) 0;
+  font-style: italic;
+}
 
 @media only screen and (max-width: 800px) and (orientation: portrait) {
   header{
