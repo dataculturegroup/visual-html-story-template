@@ -1,5 +1,5 @@
-HTML Story Template
-===================
+Visual HTML Story Template
+==========================
 
 This is an HTML story template for stories that feature visual content 
 like images, video, and graphics. It includes examples such as:
