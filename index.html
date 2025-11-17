@@ -6,7 +6,6 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>How Boston Eats</title>
     <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/base.css" />
@@ -14,7 +13,9 @@
 
     <!-- put all your custom CSS rules in this styles/story.css file -->
     <link rel="stylesheet" href="styles/story.css" />
+    
     <!-- edit these to match content from your article -->
+    <title>This is an awesome story about food in Boston</title>
     <meta property="og:title" content="The Rock" />
     <meta property="og:description" content="fill in with a two sentence summary of your story" />
     <meta property="og:type" content="article" />
@@ -26,7 +27,7 @@
     
     <!-- Here's a "hero" header that has a background image and a title sitting on top -->
     <header class="hero">
-      <h1>People love to eat here. Let's learn about why</h1>
+      <h1>This is an awesome story about food in Boston</h1>
       <img src="images/food.jpg" alt="header image" />
     </header>
 
@@ -133,6 +134,39 @@
 
 </div></div></div> <!-- ending a centered column of text -->
 
+<section id="scrolly-example1" class="scroller">
+  <figure> <!-- a `figure` is a useful wrapper around images and captions -->
+    <div class="wrapper">
+      <img id="backdrop-img"/>
+    </div>
+    <figcaption></figcaption>
+  </figure>
+
+  <div class="scroller-content"> <!-- a helpful tag to note content that is not related to the background site styling -->
+    <div class="step" data-step="1"
+          data-image="images/webcoding.jpeg"
+          data-image-credit="From Zappier.com">
+      <p>
+        Most of the time when I teach HTML to a group of students, they make webpages about something they are interested in - a band, recipe, place or something like that. People always have something to say, and love saying it to the public online.
+      </p>
+    </div>
+    <div class="step" data-step="2"
+        data-image="images/puppies.jpg"
+        data-image-credit="From wisdompanel.com">
+      <p>
+        Invariably (in the US at least) someone in the group picks their dog, or dogs in general. People find common ground with learning partners around animals and pets, and it intenet offers a plethora of pictures of dogs, and puppies, to include in a webpage project.
+      </p>
+    </div>
+    <div class="step" data-step="3"
+          data-image="images/kitten-vs-puppy.jpeg"
+          data-image-credit="From marketwatch.com">
+      <p>
+        No offense of could to cats and kittens, but in my experience people more often want to showcase their dogs in my classes than cats. I don't what that says about cat vs. dog owners, but that's been my observation.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="smallprint">
 <div class="container"><div class="row"><div class="col-lg-6 mx-auto">
 <p>This is where you should put in any small print about your data sources and such. Delete the whole section if you don't have any small print to add.</p>
@@ -146,9 +180,18 @@
 
     </footer>
     
+    <!-- Javascript: behaviors for bootstrap interactive widgets -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Javascript: behaviors for Flickity image carousel library -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
+    <!-- Javascript: behaviors scrollytelling via Scrollama library -->
+    <script src="https://unpkg.com/scrollama"></script>
+    <!-- Javascript: custom scripts for this project -->
+    <script src="scripts/scrolly.js"></script>
+    <script language="Javascript">
+      // initialize the scrolling behavior for the section with id `scrolly-example1`
+      ScrollManager.initialize("scrolly-example1");
+    </script>
   </body>
 
 </html>

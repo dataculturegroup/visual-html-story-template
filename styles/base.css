@@ -193,3 +193,60 @@ section.smallprint {
     }
   }
 }
+
+/* main body, scrollytelling part styles */
+section.scroller {
+  div.scroller-content {
+    position: relative;
+    padding: 0;
+    max-width: 50rem; /** on a wide screen don't make text boxes full-width **/
+    margin: 0 auto;
+  }
+
+  figure {
+    position: sticky; /** don't move this within the bounds of the #scrolly wrapper **/
+    left: 0;
+    width: 100%; /** make image fill the whole screen **/
+    height: 100%;
+    margin: 0;
+    overflow: clip; /** don't let the image be scrolled horizontally **/
+  }
+
+  figure div.wrapper {
+    /** center the image in the box **/
+    display: flex;
+    justify-content: center;
+  }
+
+  figure img {
+    height: 100%; /** make the image fill the box **/
+  }
+
+  figcaption {
+    position: relative;
+    top: -2.5rem;
+    color: var(--color-bg);
+    background-color: var(--color-background);
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .step {
+    filter: drop-shadow(0px 0px 8px var(--color-text));
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+
+  .step p {
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    margin: 0 3rem;
+  }
+}
