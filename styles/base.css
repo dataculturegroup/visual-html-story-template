@@ -168,6 +168,9 @@ figure {
   border-radius: 5px;
 }
 
+section {
+  padding-top: var(--padding-small);
+}
 section.smallprint {
   font-size: 0.8rem;
   padding: var(--padding-small) 0;
