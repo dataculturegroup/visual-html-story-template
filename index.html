@@ -127,13 +127,16 @@
   <p>Donec egestas elit nec tellus sollicitudin feugiat. Mauris quis velit vel felis tincidunt lacinia id id ligula. Curabitur malesuada nibh vel velit tempor posuere. Integer sagittis, ipsum congue ultrices suscipit, dolor libero gravida quam, ultrices varius felis erat at dui. Fusce condimentum vulputate eros, a tincidunt tellus pharetra ut. Cras velit est, euismod at lacus vitae, luctus rhoncus erat. </p>
 
   <!-- example of a carouself of images -->
-  <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500, "adaptiveHeight": true }'>
-    <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder" width="100%"/></div>
-    <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder" width="100%"/></div>
-    <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder" width="100%"/></div>
-    <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder" width="100%"/></div>
-    <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder" width="100%"/></div>
-    <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder" width="100%"/></div>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder 1" width="100%"/></div>
+      <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder 2" width="100%"/></div>
+      <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder 3" width="100%"/></div>
+      <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder 4" width="100%"/></div>
+      <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder 5" width="100%"/></div>
+      <div class="carousel-cell"><img src="http://placehold.co/500x400" alt="placeholder 6" width="100%"/></div>
+    </div>
+    <figcaption>&nbsp;</figcapton>
   </div>
   <!-- end carousel -->
 
@@ -212,6 +215,26 @@
     <script language="Javascript">
       // initialize the scrolling behavior for the section with id `scrolly-example1`
       ScrollManager.initialize("scrolly-example1");
+    </script>
+    <script language="Javascript">
+      // initialize the Flickity carousel(s)
+      var carouselWrappers = document.querySelectorAll('.carousel-wrapper ');
+      carouselWrappers.forEach( (wrapperElem) => {
+        // find .carouself insde wrapperElem
+        const carouselElem = wrapperElem.querySelector('.carousel');
+        const captionElem = wrapperElem.querySelector('figcaption');
+        const carouselFlkty = new Flickity( carouselElem, {
+          wrapAround: true,
+          autoPlay: 2500,
+          adaptiveHeight: true
+        });
+        // update once on initialization to get caption right
+        captionElem.textContent = carouselFlkty.selectedElement.querySelector('img').getAttribute('alt')
+        // automatically update the caption to the alt text of the showing image
+        carouselFlkty.on('select', () => {
+          captionElem.textContent = carouselFlkty.selectedElement.querySelector('img').getAttribute('alt')
+        });
+      });
     </script>
   </body>
 

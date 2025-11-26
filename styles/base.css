@@ -158,14 +158,23 @@ figure {
   }
 }
 
-.carousel {
-  margin-bottom: var(--padding-small);
-}
-.carousel-cell {
-  width: 66%;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
+.carousel-wrapper {
+  margin: var(--padding-small) 0;
+  .carousel {
+  }
+  .carousel-cell {
+    width: 66%;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+  }
+  figcaption {
+    margin-top: 50px;
+    padding: 0px;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+  }
 }
 
 section {
