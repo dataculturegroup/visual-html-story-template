@@ -22,6 +22,27 @@
   font-style: normal;
 }
 
+@keyframes fadeSlideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeSlideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 body {
   background-color: var(--color-background) !important;
   font-size: 1.25rem;
@@ -61,12 +82,21 @@ p.byline {
   color: var(--color-background);
   font-size: 1.5rem;
   font-style: italic;
+  display: hidden;
 
+  &.animate-in {
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+  
   &.pull-right {
     float: right;
     margin-right: var(--padding-medium-neg); /* push off to the right */
     margin-left: var(--padding-tiny);
     border-left: 4px solid var(--color-accent);
+    &.animate-in {
+      animation: fadeSlideInFromLeft 1.5s ease-out both;
+    }
   }
 
   &.pull-left {
@@ -74,6 +104,9 @@ p.byline {
     margin-left: var(--padding-medium-neg); /* push off to the left */
     margin-right: var(--padding-tiny);
     border-right: 4px solid var(--color-accent);
+    &.animate-in {
+      animation: fadeSlideInFromRight 1.5s ease-out both;
+    }
   }
 
   small, figcaption {

@@ -65,3 +65,39 @@ const ScrollManager = {
   }
 
 };
+
+const AnimationManager = {
+    /**
+     * What to do when an item enters the screen
+     * If it is in the screen, isIntersecting will be true.
+     * Add a class when it is.
+     */
+    intersectionCallback: (entries) => {
+        for (const entry of entries) { // Loop over all elements that either enter or exit the view.
+            if (entry.isIntersecting) { // This is true when the element is in view.
+                entry.target.classList.add('animate-in'); // Add a class.
+            } else {
+                entry.target.classList.remove('animate-in'); // Remove a class.
+            }
+        }
+    },
+
+    /**
+     * Create a observer and use the instersectionCallback as 
+     * the instructions for what to do when an element enters
+     * or leaves the view
+     */
+    observer: undefined,
+
+    /**
+     * Get all .item elements and loop over them.
+     * Observe each individual item.
+     */
+    initialize: () => {
+        AnimationManager.observer = new IntersectionObserver(AnimationManager.intersectionCallback);
+        const items = document.querySelectorAll('.pull-quote');
+        for (const item of items) {
+            AnimationManager.observer.observe(item);
+        }
+    }
+}
