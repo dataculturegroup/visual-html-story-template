@@ -95,7 +95,7 @@ const AnimationManager = {
      */
     initialize: () => {
         AnimationManager.observer = new IntersectionObserver(AnimationManager.intersectionCallback);
-        const items = document.querySelectorAll('.pull-quote');
+        const items = document.querySelectorAll('.pull-quote, h2, .smallprint');
         for (const item of items) {
             AnimationManager.observer.observe(item);
         }
